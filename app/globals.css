@@ -1,26 +1,378 @@
 @import "tailwindcss";
 
+/* ──────────────────────────────────────────────
+   Brand Design Tokens
+   ────────────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --midnight-navy: #0B1623;
+  --antique-gold: #C9A96E;
+  --warm-cream: #F5F0E8;
+  --slate-gray: #7A8FA3;
+  --deep-navy: #1A2B3D;
+  --light-gold: #D4B87A;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-midnight-navy: #0B1623;
+  --color-antique-gold: #C9A96E;
+  --color-warm-cream: #F5F0E8;
+  --color-slate-gray: #7A8FA3;
+  --color-deep-navy: #1A2B3D;
+  --color-light-gold: #D4B87A;
+
+  /* Fonts */
+  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --font-body: "Montserrat", "Helvetica Neue", Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ──────────────────────────────────────────────
+   Base Styles
+   ────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--midnight-navy);
+  color: #ffffff;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--antique-gold);
+  color: var(--midnight-navy);
+}
+
+/* ──────────────────────────────────────────────
+   Custom Scrollbar
+   ────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--midnight-navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--antique-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--light-gold);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--antique-gold) var(--midnight-navy);
+}
+
+/* ──────────────────────────────────────────────
+   Custom Cursor
+   ────────────────────────────────────────────── */
+
+.custom-cursor {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--antique-gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor.expanded {
+  width: 48px;
+  height: 48px;
+  border-color: var(--light-gold);
+}
+
+/* ──────────────────────────────────────────────
+   Noise / Grain Texture Overlay
+   ────────────────────────────────────────────── */
+
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+.grain-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  animation: grain 0.5s steps(1) infinite;
+}
+
+/* ──────────────────────────────────────────────
+   Keyframe Animations
+   ────────────────────────────────────────────── */
+
+@keyframes gold-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes grain {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-1%, -1%);
+  }
+  20% {
+    transform: translate(1%, 0%);
+  }
+  30% {
+    transform: translate(-1%, 1%);
+  }
+  40% {
+    transform: translate(1%, -1%);
+  }
+  50% {
+    transform: translate(-1%, 0%);
+  }
+  60% {
+    transform: translate(1%, 1%);
+  }
+  70% {
+    transform: translate(0%, -1%);
+  }
+  80% {
+    transform: translate(-1%, 1%);
+  }
+  90% {
+    transform: translate(1%, 0%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-gold {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Shimmer utility class */
+.shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    var(--antique-gold) 0%,
+    var(--light-gold) 25%,
+    #e8d5a8 50%,
+    var(--light-gold) 75%,
+    var(--antique-gold) 100%
+  );
+  background-size: 200% auto;
+  animation: gold-shimmer 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ──────────────────────────────────────────────
+   Loading Screen
+   ────────────────────────────────────────────── */
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--midnight-navy);
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-bar {
+  width: 200px;
+  height: 2px;
+  background-color: var(--deep-navy);
+  border-radius: 1px;
+  overflow: hidden;
+  margin-top: 24px;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--antique-gold), var(--light-gold));
+  border-radius: 1px;
+  animation: loading-progress 1.8s ease-in-out infinite;
+}
+
+@keyframes loading-progress {
+  0% {
+    width: 0%;
+    margin-left: 0%;
+  }
+  50% {
+    width: 60%;
+    margin-left: 20%;
+  }
+  100% {
+    width: 0%;
+    margin-left: 100%;
+  }
+}
+
+.loading-logo {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--antique-gold);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  animation: pulse-gold 2s ease-in-out infinite;
+}
+
+/* ──────────────────────────────────────────────
+   Gold Underline Hover Animation (Links)
+   ────────────────────────────────────────────── */
+
+.gold-underline {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.gold-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: var(--antique-gold);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.gold-underline:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ──────────────────────────────────────────────
+   Form Input Focus Styles
+   ────────────────────────────────────────────── */
+
+.form-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--slate-gray);
+  padding: 12px 0;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #ffffff;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.3s ease;
+  position: relative;
+}
+
+.form-input-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.form-input-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--antique-gold);
+  transition: width 0.4s ease, left 0.4s ease;
+}
+
+.form-input-wrapper:focus-within::after {
+  width: 100%;
+  left: 0;
+}
+
+.form-input::placeholder {
+  color: var(--slate-gray);
+  font-weight: 300;
+  transition: opacity 0.3s ease;
+}
+
+.form-input:focus::placeholder {
+  opacity: 0.4;
+}
+
+/* ──────────────────────────────────────────────
+   Reduced Motion
+   ────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .grain-overlay::after {
+    animation: none;
+  }
+
+  .shimmer-gold {
+    animation: none;
+    background: var(--antique-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .loading-bar-fill {
+    animation: none;
+    width: 100%;
+  }
 }
