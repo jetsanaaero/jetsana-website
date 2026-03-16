@@ -47,7 +47,7 @@ export const metadata: Metadata = {
       "India's first specialized aircraft detailing service. Cabin perfection, delivered.",
   },
 };
-
+import Script from "next/script";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -57,14 +57,19 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
 	{/* Google tag (gtag.js) */}
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0TBF8LJ1L5"></script>
-<script>
+<Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-0TBF8LJ1L5"
+  strategy="afterInteractive"
+/>
+
+<Script id="google-analytics" strategy="afterInteractive">
+{`
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-0TBF8LJ1L5');
-</script>
+`}
+</Script>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <script
           type="application/ld+json"
