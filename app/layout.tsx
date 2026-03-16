@@ -21,6 +21,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jetsana.com"),
   title: "JetSana | Aircraft Detailing Specialists | Mumbai, India",
   description:
     "India's first specialized aircraft detailing service. Premium interior cabin care, exterior detailing, and ceramic coating for private jets, charter planes, and helicopters. Based in Mumbai, serving India.",
