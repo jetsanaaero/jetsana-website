@@ -56,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-	<!-- Google tag (gtag.js) -->
+	{/* Google tag (gtag.js) */}
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0TBF8LJ1L5"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
