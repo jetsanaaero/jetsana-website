@@ -80,7 +80,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 3.4 }}
         >
           <TypewriterText
-            text="Cabin perfection, delivered"
+            text="Aircraft Detailing Specialists"
             speed={60}
             className="text-lg md:text-xl font-body font-light tracking-widest text-[#F5F0E8]"
           />
