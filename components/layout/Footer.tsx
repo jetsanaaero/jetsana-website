@@ -79,9 +79,14 @@ export default function Footer() {
         </div>
 
         {/* Airport Codes */}
-        <p className="font-display mt-10 text-center text-lg tracking-[0.4em] text-[#C9A96E]/70 lg:text-xl">
-          BOM &middot; COK &middot; BLR
-        </p>
+        <div className="mt-10 text-center">
+          <p className="font-display text-lg tracking-[0.4em] text-[#C9A96E]/70 lg:text-xl">
+            COK &middot; BOM &middot; BLR
+          </p>
+          <p className="font-body mt-2 text-xs tracking-wider text-[#7A8FA3]/50">
+            Cochin International &middot; Chhatrapati Shivaji Maharaj International &middot; Kempegowda International
+          </p>
+        </div>
 
         {/* Contact Info */}
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8">

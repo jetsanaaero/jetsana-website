@@ -22,30 +22,32 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jetsana.com"),
-  title: "JetSana | Aircraft Detailing Specialists | Mumbai, India",
+  title: "Jetsana | Aircraft Detailing Services in India | Kochi, Mumbai & Bangalore",
   description:
-    "India's first specialized aircraft detailing service. Premium interior cabin care, exterior detailing, and ceramic coating for private jets, charter planes, and helicopters. Based in Mumbai, serving India.",
+    "India's first specialized aircraft detailing service. Premium aircraft interior cabin care, aircraft exterior detailing, and ceramic coating for private jets, charter planes, and helicopters. Based in Kochi, serving Mumbai, Bangalore & all of India.",
   keywords: [
     "aircraft detailing",
     "private jet detailing",
     "aircraft cabin care",
     "aviation detailing India",
     "aircraft ceramic coating",
+    "Kochi aircraft detailing",
     "Mumbai aircraft detailing",
+    "Bangalore aircraft detailing",
   ],
   openGraph: {
-    title: "JetSana | Aircraft Detailing Specialists",
+    title: "Jetsana | Aircraft Detailing Services in India",
     description:
-      "India's first specialized aircraft detailing service. Cabin perfection, delivered.",
+      "India's first specialized aircraft detailing service. Based in Kochi, serving Mumbai, Bangalore & beyond.",
     type: "website",
     locale: "en_IN",
     siteName: "JetSana",
   },
   twitter: {
     card: "summary_large_image",
-    title: "JetSana | Aircraft Detailing Specialists",
+    title: "Jetsana | Aircraft Detailing Services in India",
     description:
-      "India's first specialized aircraft detailing service. Cabin perfection, delivered.",
+      "India's first specialized aircraft detailing service. Based in Kochi, serving Mumbai, Bangalore & beyond.",
   },
 };
 import Script from "next/script";
@@ -86,13 +88,13 @@ export default function RootLayout({
               email: "hello@jetsana.com",
               address: {
                 "@type": "PostalAddress",
-                addressRegion: "Maharashtra",
-                addressLocality: "Mumbai",
+                addressRegion: "Kerala",
+                addressLocality: "Kochi",
                 addressCountry: "IN",
               },
               areaServed: [
-                { "@type": "Airport", name: "Chhatrapati Shivaji Maharaj International Airport", iataCode: "BOM" },
                 { "@type": "Airport", name: "Cochin International Airport", iataCode: "COK" },
+                { "@type": "Airport", name: "Chhatrapati Shivaji Maharaj International Airport", iataCode: "BOM" },
                 { "@type": "Airport", name: "Kempegowda International Airport", iataCode: "BLR" },
               ],
             }),

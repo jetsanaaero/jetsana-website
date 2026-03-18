@@ -7,12 +7,12 @@ const milestones = [
   {
     year: '2026',
     title: 'Foundation',
-    description: 'JetSana launches as India\'s first dedicated aircraft detailing brand, based in Mumbai.',
+    description: 'JetSana launches as India\'s first dedicated aircraft detailing brand, based in Kochi.',
   },
   {
     year: '2026–27',
     title: 'Initial Operations',
-    description: 'Full-service operations across BOM, COK, and BLR airports with a growing team of trained specialists.',
+    description: 'Full-service operations across COK, BOM, and BLR airports with a growing team of trained specialists.',
   },
   {
     year: '2027–28',

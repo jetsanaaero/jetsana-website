@@ -15,9 +15,9 @@ const stats = [
     sublabel: "India's specialized aviation care",
   },
   {
-    value: 'BOM · COK · BLR',
+    value: 'COK · BOM · BLR',
     label: 'Airports Served',
-    sublabel: 'Mumbai · Kochi · Bangalore',
+    sublabel: 'Cochin International · Chhatrapati Shivaji Maharaj International · Kempegowda International',
   },
 ];
 

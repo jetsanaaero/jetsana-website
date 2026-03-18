@@ -16,9 +16,9 @@ export const COLORS = {
 
 // Airport Codes (India)
 export const AIRPORT_CODES = [
-  { code: "BOM", name: "Mumbai International" },
-  { code: "COK", name: "Kochi International" },
-  { code: "BLR", name: "Bangalore International" },
+  { code: "COK", name: "Cochin International Airport" },
+  { code: "BOM", name: "Chhatrapati Shivaji Maharaj International Airport" },
+  { code: "BLR", name: "Kempegowda International Airport" },
 ] as const;
 
 // Service Categories & Sub-Services
@@ -40,7 +40,7 @@ export interface ServiceCategory {
 export const SERVICES: ServiceCategory[] = [
   {
     id: "interior",
-    title: "Interior Detailing",
+    title: "Aircraft Interior Detailing",
     tagline: "Cabin perfection, down to every stitch",
     icon: "interior",
     subServices: [
@@ -76,7 +76,7 @@ export const SERVICES: ServiceCategory[] = [
   },
   {
     id: "exterior",
-    title: "Exterior Detailing",
+    title: "Aircraft Exterior Detailing",
     tagline: "A mirror finish at 40,000 feet",
     icon: "exterior",
     subServices: [
@@ -112,7 +112,7 @@ export const SERVICES: ServiceCategory[] = [
   },
   {
     id: "protection",
-    title: "Protection Services",
+    title: "Aircraft Protection Services",
     tagline: "Shield your investment, preserve its legacy",
     icon: "shield",
     subServices: [
@@ -148,7 +148,7 @@ export const SERVICES: ServiceCategory[] = [
   },
   {
     id: "specialized",
-    title: "Specialized Services",
+    title: "Aircraft Specialized Services",
     tagline: "Beyond detailing, an art form",
     icon: "star",
     subServices: [
@@ -231,10 +231,10 @@ export const COMPANY_INFO = {
   email: "hello@jetsana.com",
   whatsapp: "+919400580020",
   address: {
-    line1: "Mumbai",
+    line1: "Kochi",
     line2: "",
-    city: "Mumbai",
-    state: "Maharashtra",
+    city: "Kochi",
+    state: "Kerala",
     country: "India",
     pin: "",
   },

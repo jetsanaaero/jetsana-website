@@ -15,17 +15,17 @@ const aircraftTypes = [
 ];
 
 const serviceOptions = [
-  'Interior Detailing',
-  'Exterior Detailing',
-  'Protection & Coating',
-  'Specialized Services',
+  'Aircraft Interior Detailing',
+  'Aircraft Exterior Detailing',
+  'Aircraft Protection & Coating',
+  'Aircraft Specialized Services',
   'Custom Package',
 ];
 
 const airports = [
-  'BOM - Mumbai International',
-  'COK - Kochi International',
-  'BLR - Bangalore International',
+  'COK - Cochin International Airport',
+  'BOM - Chhatrapati Shivaji Maharaj International Airport',
+  'BLR - Kempegowda International Airport',
   'Other',
 ];
 
@@ -243,8 +243,8 @@ export default function ContactPage() {
                 <h3 className="font-display text-xl text-[#C9A96E] mb-6">Airports We Serve</h3>
                 <div className="space-y-4">
                   {[
-                    { code: 'BOM', name: 'Chhatrapati Shivaji Maharaj International Airport' },
                     { code: 'COK', name: 'Cochin International Airport' },
+                    { code: 'BOM', name: 'Chhatrapati Shivaji Maharaj International Airport' },
                     { code: 'BLR', name: 'Kempegowda International Airport' },
                   ].map((airport) => (
                     <div key={airport.code} className="flex items-center gap-3">

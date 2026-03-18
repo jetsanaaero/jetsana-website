@@ -237,7 +237,7 @@ export default function Header() {
                 transition={{ delay: 0.5, duration: 0.4 }}
                 className="font-body absolute bottom-12 text-xs tracking-[0.3em] text-[#7A8FA3]/60 uppercase"
               >
-                BOM &middot; COK &middot; BLR
+                COK &middot; BOM &middot; BLR
               </motion.p>
             </nav>
           </motion.div>

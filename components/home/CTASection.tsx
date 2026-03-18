@@ -83,7 +83,7 @@ export default function CTASection() {
           transition={{ duration: 0.6, delay: 1 }}
           className="mt-10 font-display text-lg tracking-[0.4em] text-[#C9A96E]/50"
         >
-          BOM &middot; COK &middot; BLR
+          COK &middot; BOM &middot; BLR
         </motion.p>
       </div>
     </section>
