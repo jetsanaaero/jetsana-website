@@ -239,9 +239,10 @@ export const COMPANY_INFO = {
     pin: "",
   },
   social: {
-    instagram: "https://instagram.com/jetsana",
-    linkedin: "https://linkedin.com/company/jetsana",
-    youtube: "https://youtube.com/@jetsana",
+    instagram: "https://www.instagram.com/jetsana.aviation",
+    x: "https://x.com/jetsana_",
+    linkedin: "https://www.linkedin.com/company/jetsana-aircraft-detailing",
+    pinterest: "https://www.pinterest.com/jetsanaaviation",
   },
   hours: {
     weekdays: "7:00 AM - 7:00 PM IST",

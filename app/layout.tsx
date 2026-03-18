@@ -73,6 +73,7 @@ export default function RootLayout({
   gtag('config', 'G-0TBF8LJ1L5');
 `}
 </Script>
+        <meta name="p:domain_verify" content="bb16e9d3a315725f07c49225aba2d723"/>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <script
           type="application/ld+json"
