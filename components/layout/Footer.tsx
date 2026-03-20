@@ -64,7 +64,7 @@ export default function Footer() {
           <Link href="/" aria-label="JetSana Home">
             <JetSanaLogo
               variant="full"
-              className="h-10 opacity-90 transition-opacity duration-300 hover:opacity-100 lg:h-12"
+              className="h-7 opacity-90 transition-opacity duration-300 hover:opacity-100 lg:h-8"
             />
           </Link>
         </div>
