@@ -76,15 +76,20 @@ export default function CTASection() {
           </p>
         </motion.div>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 1 }}
-          className="mt-10 font-display text-lg tracking-[0.4em] text-[#C9A96E]/50"
+          className="mt-10 text-center"
         >
-          COK &middot; BOM &middot; BLR
-        </motion.p>
+          <p className="font-display text-lg tracking-[0.4em] text-[#C9A96E]/50">
+            COK &middot; BOM &middot; BLR
+          </p>
+          <p className="font-body mt-2 text-xs tracking-wider text-[#7A8FA3]/40">
+            Cochin International &middot; Chhatrapati Shivaji Maharaj International &middot; Kempegowda International
+          </p>
+        </motion.div>
       </div>
     </section>
   );

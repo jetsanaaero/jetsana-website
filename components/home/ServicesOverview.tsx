@@ -7,22 +7,22 @@ import SectionHeading from '@/components/ui/SectionHeading';
 const services = [
   {
     icon: Plane,
-    title: 'Interior Cabin Detailing',
+    title: 'Aircraft Interior Cabin Detailing',
     description: 'Every leather surface conditioned. Every carpet fiber restored. Your cabin, returned to its first-flight standard.',
   },
   {
     icon: Droplets,
-    title: 'Exterior Wash & Polish',
+    title: 'Aircraft Exterior Wash & Polish',
     description: 'Aviation-grade products and meticulous technique deliver a mirror finish worthy of the skies.',
   },
   {
     icon: Shield,
-    title: 'Ceramic Coating & Protection',
+    title: 'Aircraft Ceramic Coating & Protection',
     description: 'Advanced nano-ceramic shields that guard against UV, corrosion, and the elements for up to 24 months.',
   },
   {
     icon: Sparkles,
-    title: 'Sanitization & Disinsection',
+    title: 'Aircraft Sanitization & Disinsection',
     description: 'WHO-compliant disinsection and hospital-grade sanitization for a pristine, allergen-free cabin.',
   },
 ];

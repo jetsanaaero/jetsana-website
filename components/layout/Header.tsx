@@ -230,15 +230,20 @@ export default function Header() {
               </motion.div>
 
               {/* Airport codes in mobile menu */}
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ delay: 0.5, duration: 0.4 }}
-                className="font-body absolute bottom-12 text-xs tracking-[0.3em] text-[#7A8FA3]/60 uppercase"
+                className="absolute bottom-12 text-center"
               >
-                COK &middot; BOM &middot; BLR
-              </motion.p>
+                <p className="font-body text-xs tracking-[0.3em] text-[#7A8FA3]/60 uppercase">
+                  COK &middot; BOM &middot; BLR
+                </p>
+                <p className="font-body mt-1 text-[10px] tracking-wider text-[#7A8FA3]/40">
+                  Cochin Intl &middot; Mumbai Intl &middot; Bangalore Intl
+                </p>
+              </motion.div>
             </nav>
           </motion.div>
         )}
