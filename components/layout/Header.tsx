@@ -92,7 +92,7 @@ export default function Header() {
               <JetSanaLogo
                 variant="mark"
                 className={`transition-all duration-500 ${
-                  isScrolled ? 'h-10 lg:h-12' : 'h-14 lg:h-16'
+                  isScrolled ? 'h-14 lg:h-16' : 'h-20 lg:h-22'
                 }`}
               />
             </motion.div>
