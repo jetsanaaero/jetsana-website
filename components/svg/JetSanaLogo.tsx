@@ -20,8 +20,8 @@ export const JetSanaLogo: React.FC<JetSanaLogoProps> = ({
       width={360}
       height={variant === 'mark' ? 40 : 80}
       priority
-      className={className}
-      style={{ width: 'auto', height: '100%', objectFit: 'contain' }}
+      className={`w-auto ${className}`}
+      style={{ objectFit: 'contain' }}
     />
   );
 };
